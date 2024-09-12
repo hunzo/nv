@@ -7,10 +7,20 @@ return {
 
 			local lspconfig = require("lspconfig")
 			local lsp_server = {
-				"emmet_ls",
-				"lua_ls",
-				"pyright",
+				"tailwindcss",
+				"ts_ls",
 				"gopls",
+				"pyright",
+				"emmet_ls",
+				"html",
+				"lua_ls",
+				"yamlls",
+				"denols",
+				"dockerls",
+				"bashls",
+				"jsonls",
+				"cssls",
+				"ansiblels",
 			}
 
 			local map = vim.keymap.set

@@ -1,6 +1,11 @@
 local options = {
 	ensure_installed = {
 		"lua",
+		"python",
+		"go",
+		"dockerfile",
+		"yaml",
+		"markdown",
 	},
 	auto_install = true,
 	ignore_install = {

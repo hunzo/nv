@@ -30,12 +30,20 @@ return {
 
 			-- list of servers for mason to install
 			ensure_installed = {
+				"tailwindcss",
 				"ts_ls",
 				"gopls",
 				"pyright@1.1.377",
 				"emmet_ls",
 				"html",
 				"lua_ls",
+				"yamlls",
+				"denols",
+				"dockerls",
+				"bashls",
+				"jsonls",
+				"cssls",
+				"ansiblels",
 			},
 
 			-- -- auto-install configured servers (with lspconfig)
@@ -44,9 +52,20 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"autopep8",
+				"djlint",
 				"eslint_d",
 				"prettierd",
 				"stylua",
+				"gofumpt",
+				"golines",
+				"ruff",
+				"yamlfix",
+				-- "sql-formatter",
+				"sqlfmt",
+				"golangci-lint",
+				"ansible-lint",
+				"beautysh",
 			},
 		})
 	end,

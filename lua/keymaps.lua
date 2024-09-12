@@ -1,12 +1,28 @@
+local opt = vim.opt
+opt.signcolumn = "yes"
+opt.number = true
+opt.shiftround = true
+--- set termguicolor
+-- vim.cmd("set tgc")
+if vim.fn.has("nvim-0.10") == 1 then
+	opt.smoothscroll = true
+	opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+	opt.foldmethod = "expr"
+	opt.foldtext = ""
+else
+	opt.foldmethod = "indent"
+	opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
+end
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- telescope
-local builtin = require('telescope.builtin')
-keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set('n', '<leader>fg', builtin.live_grep, {})
-keymap.set('n', '<leader>fb', builtin.buffers, {})
-keymap.set('n', '<leader>fh', builtin.help_tags, {})
+local builtin = require("telescope.builtin")
+keymap.set("n", "<leader>ff", builtin.find_files, {})
+keymap.set("n", "<leader>fg", builtin.live_grep, {})
+keymap.set("n", "<leader>fb", builtin.buffers, {})
+keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- select and move
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
