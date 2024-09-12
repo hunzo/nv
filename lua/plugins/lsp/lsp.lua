@@ -9,6 +9,8 @@ return {
 			local lsp_server = {
 				"emmet_ls",
 				"lua_ls",
+				"pyright",
+				"gopls",
 			}
 
 			local map = vim.keymap.set
@@ -17,6 +19,8 @@ return {
 				local function opts(desc)
 					return { buffer = bufnr, desc = "LSP " .. desc }
 				end
+
+				print("hey , lsp_on_attach")
 
 				map("n", "gD", vim.lsp.buf.declaration, opts("Go to declaration"))
 				map("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
@@ -38,7 +42,7 @@ return {
 			for _, lsp in ipairs(lsp_server) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,
-					on_attach = lsp_on_attac,
+					on_attach = lsp_on_attach,
 				})
 			end
 
