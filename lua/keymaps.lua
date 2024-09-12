@@ -1,9 +1,5 @@
 local opt = vim.opt
-opt.signcolumn = "yes"
-opt.number = true
-opt.shiftround = true
---- set termguicolor
--- vim.cmd("set tgc")
+-- opt.signcolumn = "yes"
 if vim.fn.has("nvim-0.10") == 1 then
 	opt.smoothscroll = true
 	opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
@@ -44,5 +40,4 @@ keymap.set("n", "<c-h>", "<C-w>h", opts)
 keymap.set("n", "<c-l>", "<C-w>l", opts)
 
 -- nvim-neo-tree
--- keymap.set("n", "<leader>bf", ":Neotree toggle buffers reveal float<CR>", opts)
 keymap.set("n", "<C-n>", ":Neotree toggle filesystem reveal float<CR>", opts)
